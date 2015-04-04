@@ -1,9 +1,17 @@
 package taiju.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Taiju {
+    @Id
     private int id;
     private long recordedAt;
     private float weight;
+
+    public Taiju(){
+    }
 
     public Taiju(long recordedAt,float weight){
         this.recordedAt = recordedAt;
