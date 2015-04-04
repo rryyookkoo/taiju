@@ -3,7 +3,8 @@ package taiju.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import taiju.domain.Taiju;
@@ -30,7 +31,10 @@ public class TaijuController {
     }
 
     @RequestMapping(value="/taiju/create",method = RequestMethod.POST)
-    String createTaiju(TaijuForm taijuForm){
+    String createTaiju(@Validated TaijuForm taijuForm, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "taiju/new";
+        }
         taijuService.save(taijuForm);
         return "redirect:/";
     }

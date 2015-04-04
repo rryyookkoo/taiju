@@ -9,11 +9,15 @@
         <table>
             <tr>
                 <td>体重</td>
-                <td><input type="text" th:field="*{weight}"/></td>
+                <td><input type="text" th:field="*{weight}"/>
+                    <p th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}"></p>
+                </td>
             </tr>
             <tr>
                 <td>日付</td>
-                <td><input type="text" th:field="*{recordedAt}"/></td>
+                <td><input type="text" th:field="*{recordedAt}"/>
+                    <p th:if="${#fields.hasErrors('recordedAt')}" th:errors="*{recordedAt}"></p>
+                </td>
             </tr>
         </table>
         <input type="submit"/>

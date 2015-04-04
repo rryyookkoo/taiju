@@ -35,7 +35,7 @@ public class TaijuService {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        taiju.setWeight(Integer.parseInt(taijuForm.getWeight()));
+        taiju.setWeight(Float.parseFloat(taijuForm.getWeight()));
         taijuRepository.save(taiju);
     }
 }
