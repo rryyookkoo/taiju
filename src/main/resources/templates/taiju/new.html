@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+    <form th:object="${taijuForm}" th:action="@{/taiju/create}" method="post">
+        <table>
+            <tr>
+                <td>体重</td>
+                <td><input type="text" th:field="*{weight}"/></td>
+            </tr>
+            <tr>
+                <td>日付</td>
+                <td><input type="text" th:field="*{recordedAt}"/></td>
+            </tr>
+        </table>
+        <input type="submit"/>
+    </form>
+</body>
+</html>
