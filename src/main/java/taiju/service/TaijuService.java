@@ -20,4 +20,8 @@ public class TaijuService {
         }
         return list;
     }
+
+    public void save(){
+
+    }
 }
