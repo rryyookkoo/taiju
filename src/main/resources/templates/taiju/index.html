@@ -11,7 +11,7 @@
     </tr>
     <tr th:each="taiju : ${taijuList}">
         <td th:text="${taiju.id}">1</td>
-        <td th:text="${taiju.recordedAt}">2015/4/3</td>
+        <td th:text="${#dates.format(new java.util.Date(taiju.recordedAt),'yyyy/MM/dd')}">2015/4/3</td>
         <td th:text="${taiju.weight}">51.8</td>
     </tr>
 </table>
