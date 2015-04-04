@@ -31,6 +31,7 @@ public class TaijuController {
 
     @RequestMapping(value="/taiju/create",method = RequestMethod.POST)
     String createTaiju(TaijuForm taijuForm){
+        taijuService.save(taijuForm);
         return "redirect:/";
     }
 
