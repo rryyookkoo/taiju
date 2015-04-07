@@ -1,10 +1,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.4/js/bootstrap.min.js}" ></script>
+    <style>
+        .list{
+        }
+    </style>
 </head>
 <body>
+<p>
+<span th:text="${#httpServletRequest.remoteUser}"></span>さんようこそ！
+</p>
 <a th:href="@{/taiju/new}">登録</a>
-<table>
+<table class="table table-striped list">
     <tr>
         <th>id</th>
         <th>日付</th>

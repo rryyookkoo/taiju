@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    //.antMatchers("/css/**").permitAll() // 認証不要なパス。なければ書かなくてOK
+                    .antMatchers("/webjars/**").permitAll() // 認証不要なパス。なければ書かなくてOK
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
