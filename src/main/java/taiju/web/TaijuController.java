@@ -14,6 +14,7 @@ import taiju.service.TaijuService;
 import java.util.List;
 
 @Controller
+@RequestMapping("/taiju")
 public class TaijuController {
     @Autowired
     private TaijuService taijuService;
@@ -25,18 +26,18 @@ public class TaijuController {
         return "taiju/index";
     }
 
-    @RequestMapping("/taiju/new")
+    @RequestMapping("/new")
     String newTaiju(TaijuForm taijuForm) {
         return "taiju/new";
     }
 
-    @RequestMapping(value="/taiju/create",method = RequestMethod.POST)
+    @RequestMapping(value="/create",method = RequestMethod.POST)
     String createTaiju(@Validated TaijuForm taijuForm, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             return "taiju/new";
         }
         taijuService.save(taijuForm);
-        return "redirect:/";
+        return "redirect:/taiju/";
     }
 
 }
